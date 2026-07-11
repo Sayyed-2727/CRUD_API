@@ -211,7 +211,7 @@ Response: 204 No Content
 Database name: `crud_api`  
 Username: `root`  
 Password: `root`  
-Port: `3306`  
+Port: `3307`  
 
 The schema is managed exclusively through Flyway migrations. Hibernate is configured with `ddl-auto=validate`.
 
