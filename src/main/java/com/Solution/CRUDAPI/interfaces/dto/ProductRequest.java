@@ -4,11 +4,10 @@ import jakarta.validation.constraints.*;
 
 import java.math.BigDecimal;
 
-/**
- * DTO used for create and update operations.
- *
- * Keeps API layer isolated from persistence model.
- */
+
+// DTO used for create and update operations.
+// Keeps API layer isolated from persistence model.
+
 public class ProductRequest {
 
     @NotBlank(message = "Name is mandatory")
