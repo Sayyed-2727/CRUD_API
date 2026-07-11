@@ -52,18 +52,26 @@ It must display version 17.
 
 ## How to Run the Application
 
-### 1. Start MySQL 8 (Docker recommended)
+### 1. Start MySQL 8 with Docker Compose
 
-Run the following command:
+The project includes a `compose.yaml` file to simplify the database startup.
 
-```
-docker run --name mysql-crud -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=crud_api -p 3307:3306 -d mysql:8
-```
-
-After starting the container, check the logs:
+From the project root, run:
 
 ```
-docker logs -f mysql-crud
+docker compose up -d
+```
+
+To check that the container is running:
+
+```
+docker compose ps
+```
+
+To inspect the MySQL logs:
+
+```
+docker compose logs -f mysql
 ```
 
 Wait until the following message appears:
@@ -203,7 +211,7 @@ Response: 204 No Content
 Database name: `crud_api`  
 Username: `root`  
 Password: `root`  
-Port: `3307`  
+Port: `3306`  
 
 The schema is managed exclusively through Flyway migrations. Hibernate is configured with `ddl-auto=validate`.
 
@@ -224,8 +232,13 @@ To execute unit tests:
 If you need to reset the environment:
 
 ```
-docker stop mysql-crud
-docker rm mysql-crud
+docker compose down
+```
+
+To remove the volume and start again from a clean database:
+
+```
+docker compose down -v
 ```
 
 Then repeat the steps described above.
