@@ -57,7 +57,7 @@ It must display version 17.
 Run the following command:
 
 ```
-docker run --name mysql-crud -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=crud_api -p 3306:3306 -d mysql:8
+docker run --name mysql-crud -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=crud_api -p 3307:3306 -d mysql:8
 ```
 
 After starting the container, check the logs:
@@ -203,7 +203,7 @@ Response: 204 No Content
 Database name: `crud_api`  
 Username: `root`  
 Password: `root`  
-Port: `3306`  
+Port: `3307`  
 
 The schema is managed exclusively through Flyway migrations. Hibernate is configured with `ddl-auto=validate`.
 
